@@ -1,0 +1,19 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and temporary files
+*.tmp
+*.bak
+*.swp
+*~
+.idea/
+
+# Log files
+*.log
+
+# Saved browser search web pages
+*Google Search*
+*_files/
+

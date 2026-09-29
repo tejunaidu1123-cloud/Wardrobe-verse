@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teju's Wardrobe — Smart AI Fashion & Outfit Studio</title>
+  <meta name="description" content="Design, match, and curate your personal style with Teju's Wardrobe's AI-driven outfit studio, curated collections, and smart style harmony engine." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <p>✨ <strong>Teju's Wardrobe:</strong> Smart AI Outfit Matching & Virtual Styling Studio is Live! <span>Free Personal Styling Today</span></p>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-row">
+      <a href="#" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-vest-patches"></i></span>
+        Teju's <span>Wardrobe</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+        <a href="#products" class="nav-link" data-section="products" data-gender="men"><i class="fa-solid fa-person"></i> Men</a>
+        <a href="#products" class="nav-link" data-section="products" data-gender="women"><i class="fa-solid fa-person-dress"></i> Women</a>
+        <a href="#categories" class="nav-link" data-section="categories">Categories</a>
+        <a href="#outfitStudio" class="nav-link highlight-nav" data-section="outfitStudio"><i class="fa-solid fa-wand-magic-sparkles"></i> Outfit Studio</a>
+        <a href="#lookbooks" class="nav-link" data-section="lookbooks"><i class="fa-solid fa-camera-retro"></i> Lookbooks</a>
+        <a href="#products" class="nav-link" data-section="products" data-filter="all">Collection</a>
+        <a href="#mywardrobe" class="nav-link" data-section="mywardrobe"><i class="fa-regular fa-heart"></i> My Wardrobe</a>
+      </nav>
+
+      <div class="auth-actions">
+        <button id="cartBtn" class="cart-btn" aria-label="View Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <div id="userProfileArea" class="user-profile-area">
+          <button id="signInBtn" class="btn btn-ghost">Sign In</button>
+          <button id="registerBtn" class="btn btn-primary">Join Free</button>
+        </div>
+
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="logo">Teju's <span>Wardrobe</span></div>
+      <button id="closeDrawerBtn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#hero" class="drawer-link" data-filter="all"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#products" class="drawer-link" data-gender="men"><i class="fa-solid fa-person"></i> Men's Collection</a>
+      <a href="#products" class="drawer-link" data-gender="women"><i class="fa-solid fa-person-dress"></i> Women's Collection</a>
+      <a href="#lookbooks" class="drawer-link"><i class="fa-solid fa-camera-retro"></i> Editorial Lookbooks</a>
+      <a href="#products" class="drawer-link" data-occasion="casual"><i class="fa-solid fa-mug-hot"></i> Casual Wear</a>
+      <a href="#products" class="drawer-link" data-occasion="office"><i class="fa-solid fa-briefcase"></i> Office & Formal</a>
+      <a href="#products" class="drawer-link" data-occasion="party"><i class="fa-solid fa-champagne-glasses"></i> Party Wear</a>
+      <a href="#products" class="drawer-link" data-occasion="traditional"><i class="fa-solid fa-gem"></i> Traditional & Wedding</a>
+      <a href="#products" class="drawer-link" data-category="accessories"><i class="fa-solid fa-glasses"></i> Accessories</a>
+      <a href="#outfitStudio" class="drawer-link highlight-link"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Outfit Studio</a>
+      <a href="#mywardrobe" class="drawer-link"><i class="fa-solid fa-heart"></i> My Wardrobe</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <div class="hero-tag"><i class="fa-solid fa-sparkles"></i> Redefining Personal Style</div>
+          <h1>Discover Your <em>Signature</em> Look with AI Styling</h1>
+          <p>
+            Mix, match, and curate high-end apparel effortlessly. Experience real-time outfit harmony scoring, intelligent occasion pairing, and personalized wardrobe collections.
+          </p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary btn-large" id="exploreBtn">
+              <i class="fa-solid fa-compass"></i> Explore Collection
+            </button>
+            <button class="btn btn-gold btn-large" id="createOutfitBtn">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Open Outfit Studio
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">56+</span>
+              <span class="stat-lbl">Curated Pieces</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-lbl">Smart Matching</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">4.9★</span>
+              <span class="stat-lbl">Fashion Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="hero-main-card">
+              <img src="images/hero-fashion.jpg" alt="Luxury Editorial Fashion" class="hero-img" id="heroVisualImg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&h=600&fit=crop&q=80';" />
+              <div class="hero-overlay-tag">
+                <span class="pulse-dot"></span> AI Curated Look: <strong>Haute Elegance</strong>
+              </div>
+            </div>
+            <div class="floating-badge badge-top-right">
+              <i class="fa-solid fa-fire"></i> Trending Autumn
+            </div>
+            <div class="floating-badge badge-bottom-left">
+              <i class="fa-solid fa-star"></i> 98% Style Match
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Visual Category Showcase -->
+    <section class="categories container" id="categories">
+      <div class="section-header">
+        <span class="sub-heading">Curated Categories</span>
+        <h2>Browse by Visual Category</h2>
+        <p>Select a category to instantly filter matching outfits and fabrics</p>
+      </div>
+      <div class="category-grid" id="categoryGrid">
+        <button class="cat visual-cat active" data-cat="all">
+          <div class="cat-bg-img" style="background-image: url('images/hero-fashion.jpg');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-border-all"></i></span>
+          <span class="cat-name">All Items</span>
+          <span class="cat-count">56 Items</span>
+        </button>
+        <button class="cat visual-cat" data-cat="shirts">
+          <div class="cat-bg-img" style="background-image: url('images/shirts/download.jpeg');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-shirt"></i></span>
+          <span class="cat-name">Shirts</span>
+          <span class="cat-count">8 Items</span>
+        </button>
+        <button class="cat visual-cat" data-cat="tops">
+          <div class="cat-bg-img" style="background-image: url('images/tshirts/tshirt.jpeg');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-tshirt"></i></span>
+          <span class="cat-name">Tops & Tees</span>
+          <span class="cat-count">9 Items</span>
+        </button>
+        <button class="cat visual-cat" data-cat="jeans">
+          <div class="cat-bg-img" style="background-image: url('images/jeans/download.jpeg');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-person-walking"></i></span>
+          <span class="cat-name">Jeans & Trousers</span>
+          <span class="cat-count">12 Items</span>
+        </button>
+        <button class="cat visual-cat" data-cat="jackets">
+          <div class="cat-bg-img" style="background-image: url('images/jackets/download.jpeg');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-vest"></i></span>
+          <span class="cat-name">Jackets & Coats</span>
+          <span class="cat-count">6 Items</span>
+        </button>
+        <button class="cat visual-cat" data-cat="shoes">
+          <div class="cat-bg-img" style="background-image: url('images/shoes/sneakers.jpg');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-shoe-prints"></i></span>
+          <span class="cat-name">Footwear</span>
+          <span class="cat-count">4 Items</span>
+        </button>
+        <button class="cat visual-cat" data-cat="bags">
+          <div class="cat-bg-img" style="background-image: url('images/bags/bg.webp');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+          <span class="cat-name">Luxury Bags</span>
+          <span class="cat-count">4 Items</span>
+        </button>
+        <button class="cat visual-cat" data-cat="accessories">
+          <div class="cat-bg-img" style="background-image: url('images/accessories/watch.jpeg');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-glasses"></i></span>
+          <span class="cat-name">Accessories</span>
+          <span class="cat-count">8 Items</span>
+        </button>
+        <button class="cat visual-cat" data-cat="traditional">
+          <div class="cat-bg-img" style="background-image: url('images/traditional/10_49_500KB.jpg');"></div>
+          <div class="cat-overlay"></div>
+          <span class="cat-icon"><i class="fa-solid fa-gem"></i></span>
+          <span class="cat-name">Traditional & Ethnic</span>
+          <span class="cat-count">5 Items</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Outfit Studio & Virtual Dressing Room -->
+    <section class="outfit-studio-section" id="outfitStudio">
+      <div class="container">
+        <div class="section-header center">
+          <span class="sub-heading"><i class="fa-solid fa-wand-magic-sparkles"></i> Interactive Styling Suite</span>
+          <h2>Virtual Outfit Studio</h2>
+          <p>Assemble your ensemble piece by piece or let AI harmonize your style in seconds</p>
+        </div>
+
+        <div class="studio-layout">
+          <!-- Left: Dressing Room / Slot Board -->
+          <div class="studio-board">
+            <div class="studio-board-header">
+              <div class="outfit-meta">
+                <span class="studio-badge"><i class="fa-solid fa-layer-group"></i> Active Canvas</span>
+                <h3 id="currentOutfitTitle">Custom Ensemble</h3>
+              </div>
+              <div class="harmony-meter" id="harmonyMeter">
+                <div class="harmony-circle">
+                  <span id="harmonyScore">0%</span>
+                </div>
+                <div class="harmony-info">
+                  <strong id="harmonyLabel">Select items</strong>
+                  <span id="harmonyFeedback">Add 2+ items to calculate match</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Categorized Garment Slots Grid -->
+            <div class="slots-container" id="slotsContainer">
+              <div class="outfit-slot" data-slot="accessories" id="slot-accessories">
+                <div class="slot-label"><i class="fa-solid fa-glasses"></i> Accessory</div>
+                <div class="slot-content empty" id="slot-content-accessories">
+                  <i class="fa-solid fa-plus slot-plus"></i>
+                  <span>No accessory</span>
+                </div>
+              </div>
+
+              <div class="outfit-slot" data-slot="jackets" id="slot-jackets">
+                <div class="slot-label"><i class="fa-solid fa-vest"></i> Outerwear / Layer</div>
+                <div class="slot-content empty" id="slot-content-jackets">
+                  <i class="fa-solid fa-plus slot-plus"></i>
+                  <span>No jacket</span>
+                </div>
+              </div>
+
+              <div class="outfit-slot highlight-slot" data-slot="tops" id="slot-tops">
+                <div class="slot-label"><i class="fa-solid fa-shirt"></i> Top / Shirt</div>
+                <div class="slot-content empty" id="slot-content-tops">
+                  <i class="fa-solid fa-plus slot-plus"></i>
+                  <span>No top selected</span>
+                </div>
+              </div>
+
+              <div class="outfit-slot" data-slot="jeans" id="slot-jeans">
+                <div class="slot-label"><i class="fa-solid fa-person-walking"></i> Bottom / Jeans</div>
+                <div class="slot-content empty" id="slot-content-jeans">
+                  <i class="fa-solid fa-plus slot-plus"></i>
+                  <span>No bottom selected</span>
+                </div>
+              </div>
+
+              <div class="outfit-slot" data-slot="shoes" id="slot-shoes">
+                <div class="slot-label"><i class="fa-solid fa-shoe-prints"></i> Footwear</div>
+                <div class="slot-content empty" id="slot-content-shoes">
+                  <i class="fa-solid fa-plus slot-plus"></i>
+                  <span>No shoes selected</span>
+                </div>
+              </div>
+
+              <div class="outfit-slot" data-slot="bags" id="slot-bags">
+                <div class="slot-label"><i class="fa-solid fa-bag-shopping"></i> Handbag</div>
+                <div class="slot-content empty" id="slot-content-bags">
+                  <i class="fa-solid fa-plus slot-plus"></i>
+                  <span>No bag selected</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Selected Items Drawer List -->
+            <div class="selected-items-list" id="selectedItemsContainer">
+              <div class="empty-state" id="emptySelectedMsg">
+                <i class="fa-solid fa-vest-patches"></i>
+                <p>Your studio canvas is currently empty. Click <strong>"Add to Outfit"</strong> on any product below to begin styling!</p>
+              </div>
+              <div id="selectedGrid" class="selected-grid"></div>
+            </div>
+
+            <!-- Studio Action Bar -->
+            <div class="studio-actions">
+              <div class="studio-pricing">
+                <span class="price-lbl">Outfit Total:</span>
+                <span class="price-val" id="outfitTotalPrice">₹0</span>
+              </div>
+              <div class="studio-buttons">
+                <button id="clearSelected" class="btn btn-ghost" title="Clear all selections">
+                  <i class="fa-solid fa-trash-can"></i> Clear
+                </button>
+                <button id="aiAutoMatchBtn" class="btn btn-secondary" title="Auto-complete matching items">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> AI Auto-Complete
+                </button>
+                <button id="saveOutfit" class="btn btn-gold">
+                  <i class="fa-regular fa-bookmark"></i> Save Outfit
+                </button>
+                <button id="addOutfitToCartBtn" class="btn btn-primary">
+                  <i class="fa-solid fa-cart-plus"></i> Buy Complete Outfit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: AI Stylist & Smart Suggestions -->
+          <div class="studio-sidebar">
+            <div class="ai-stylist-card">
+              <div class="stylist-header">
+                <div class="stylist-avatar"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div>
+                  <h4>Teju's AI Stylist</h4>
+                  <span class="status-online"><span class="dot"></span> Active Assistant</span>
+                </div>
+              </div>
+              <div class="stylist-bubble" id="stylistTip">
+                "Welcome to your styling studio! Pick a base shirt or jacket from the collection below and I will harmonize matching trousers, accessories, and shoes for you."
+              </div>
+              
+              <div class="occasion-presets">
+                <span class="preset-title">✨ Instant 1-Click AI Presets:</span>
+                <div class="preset-buttons">
+                  <button class="preset-btn" data-preset="casual"><i class="fa-solid fa-mug-hot"></i> Casual Weekend</button>
+                  <button class="preset-btn" data-preset="office"><i class="fa-solid fa-briefcase"></i> Executive Office</button>
+                  <button class="preset-btn" data-preset="party"><i class="fa-solid fa-champagne-glasses"></i> Night Glam</button>
+                  <button class="preset-btn" data-preset="traditional"><i class="fa-solid fa-gem"></i> Festive Ethnic</button>
+                  <button class="preset-btn" data-preset="college"><i class="fa-solid fa-graduation-cap"></i> Campus Cool</button>
+                  <button class="preset-btn" data-preset="interview"><i class="fa-solid fa-handshake"></i> Job Interview</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="recommendations-box">
+              <div class="box-header">
+                <h4><i class="fa-solid fa-thumbs-up"></i> Recommended Pairs</h4>
+                <span class="badge" id="recCountBadge">0 pairs</span>
+              </div>
+              <div id="recommendGrid" class="recommend-grid">
+                <div class="rec-placeholder">Select items to see dynamic pairing recommendations.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Editorial Runway Lookbooks -->
+    <section class="lookbooks-section container" id="lookbooks">
+      <div class="section-header center">
+        <span class="sub-heading"><i class="fa-solid fa-camera-retro"></i> Runway & Editorial Inspo</span>
+        <h2>Curated Editorial Lookbooks</h2>
+        <p>Explore full head-to-toe styled looks curated by professional fashion directors. One-click load any look straight into your Outfit Studio.</p>
+      </div>
+      <div class="lookbook-grid" id="lookbookGrid">
+        <!-- Injected dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- Main Collection / Products Section -->
+    <section class="products container" id="products">
+      <div class="section-header">
+        <span class="sub-heading">The Wardrobe Catalog</span>
+        <h2>Explore The Collection</h2>
+        <p>Filter by gender, occasion, category, and price to find your perfect pieces</p>
+      </div>
+
+      <!-- Modern Filter Toolbar with Gender Switcher -->
+      <div class="collection-controls">
+        <!-- Dedicated Gender Selector Tabs -->
+        <div class="gender-tabs-wrap">
+          <span class="gender-tabs-title"><i class="fa-solid fa-venus-mars"></i> Shop by Gender:</span>
+          <div class="gender-tabs" id="genderTabs">
+            <button class="gender-tab active" data-gender="all">
+              <i class="fa-solid fa-border-all"></i> All Fashion <span class="gender-count" id="countAll">33</span>
+            </button>
+            <button class="gender-tab" data-gender="men">
+              <i class="fa-solid fa-person"></i> Men's Collection <span class="gender-count" id="countMen">25</span>
+            </button>
+            <button class="gender-tab" data-gender="women">
+              <i class="fa-solid fa-person-dress"></i> Women's Collection <span class="gender-count" id="countWomen">20</span>
+            </button>
+            <button class="gender-tab" data-gender="unisex">
+              <i class="fa-solid fa-gem"></i> Unisex Essentials <span class="gender-count" id="countUnisex">16</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="searchInput" placeholder="Search by name, color, occasion..." autocomplete="off">
+          <button id="clearSearchBtn" class="clear-search-btn" title="Clear Search"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="filters-row">
+          <div class="select-wrapper">
+            <i class="fa-solid fa-layer-group"></i>
+            <select id="filterCategory" aria-label="Filter by Category">
+              <option value="all">All Categories</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <i class="fa-solid fa-calendar-check"></i>
+            <select id="filterOccasion" aria-label="Filter by Occasion">
+              <option value="all">All Occasions</option>
+              <option value="casual">Casual</option>
+              <option value="office">Office & Work</option>
+              <option value="party">Party & Night Out</option>
+              <option value="traditional">Traditional & Wedding</option>
+              <option value="college">College & Campus</option>
+              <option value="interview">Formal Interview</option>
+              <option value="semi-formal">Semi-Formal</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <i class="fa-solid fa-venus-mars"></i>
+            <select id="filterGender" aria-label="Filter by Gender">
+              <option value="all">All Genders</option>
+              <option value="men">Men's Fashion</option>
+              <option value="women">Women's Fashion</option>
+              <option value="unisex">Unisex Styles</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <i class="fa-solid fa-arrow-down-wide-short"></i>
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="featured">Sort: Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name-az">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="active-filter-tags" id="activeFilterTags"></div>
+      </div>
+
+      <!-- Results Count Bar -->
+      <div class="results-bar">
+        <span id="resultsCount">Showing all items</span>
+        <button id="resetFiltersBtn" class="reset-link"><i class="fa-solid fa-rotate-left"></i> Reset Filters</button>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- My Wardrobe & Favourites -->
+    <section class="wardrobe-section" id="mywardrobe">
+      <div class="container">
+        <div class="section-header">
+          <span class="sub-heading"><i class="fa-solid fa-heart"></i> Your Saved Style</span>
+          <h2>My Wardrobe</h2>
+          <p>Revisit your custom-built outfits and saved favorite pieces anytime</p>
+        </div>
+
+        <div class="wardrobe-tabs">
+          <button class="wardrobe-tab active" data-tab="savedOutfitsTab">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Saved Outfits (<span id="savedOutfitsCount">0</span>)
+          </button>
+          <button class="wardrobe-tab" data-tab="favouritesTab">
+            <i class="fa-solid fa-heart"></i> Favorite Items (<span id="favoritesCount">0</span>)
+          </button>
+        </div>
+
+        <div class="wardrobe-content">
+          <!-- Saved Outfits Panel -->
+          <div class="wardrobe-panel active" id="savedOutfitsTab">
+            <div id="savedOutfits" class="saved-outfits-grid"></div>
+          </div>
+
+          <!-- Favourites Panel -->
+          <div class="wardrobe-panel" id="favouritesTab">
+            <div id="favouritesGrid" class="product-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Style Benefits / Trust Section -->
+    <section class="features-section container">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>AI Outfit Harmonizer</h3>
+        <p>Smart color matching and style cohesiveness calculation powered by Teju's Wardrobe.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Curated Quality</h3>
+        <p>Hand-selected pieces from world-class designers tailored for modern elegance.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h3>Express Direct Shipping</h3>
+        <p>Complimentary 2-day delivery on all complete curated outfits and orders over ₹499.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-arrow-rotate-left"></i></div>
+        <h3>Free 30-Day Fits</h3>
+        <p>Try your outfits risk-free with seamless free exchanges and guaranteed satisfaction.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-col brand-col">
+        <div class="logo">Teju's <span>Wardrobe</span></div>
+        <p>Redefining digital fashion and personalized outfit styling with intelligent AI matching.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#products" data-gender="men">Men's Fashion</a></li>
+          <li><a href="#products" data-gender="women">Women's Fashion</a></li>
+          <li><a href="#products" data-occasion="office">Occasion Styles</a></li>
+          <li><a href="#outfitStudio">AI Outfit Studio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Teju's Wardrobe</h4>
+        <ul>
+          <li><a href="#mywardrobe">My Wardrobe</a></li>
+          <li><a href="#" id="footerCartLink">Shopping Bag</a></li>
+          <li><a href="#products">New Arrivals</a></li>
+          <li><a href="#hero">Style Matcher</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter-col">
+        <h4>Style Newsletter</h4>
+        <p>Get exclusive drops and weekly fashion recommendations.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 Teju's Wardrobe Inc. All rights reserved. Crafted with precision for fashion enthusiasts.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Product Modal -->
+  <div id="quickViewModal" class="modal">
+    <div class="modal-backdrop" id="quickViewBackdrop"></div>
+    <div class="modal-content modal-large">
+      <button class="modal-close" id="closeQuickView" aria-label="Close product preview"><i class="fa-solid fa-xmark"></i></button>
+      <div class="quick-view-body" id="quickViewBody">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Drawer / Modal -->
+  <div id="cartModal" class="modal">
+    <div class="modal-backdrop" id="cartBackdrop"></div>
+    <div class="modal-content cart-drawer-content">
+      <div class="cart-header">
+        <h3><i class="fa-solid fa-cart-shopping"></i> Shopping Cart (<span id="cartItemCountTitle">0</span>)</h3>
+        <button id="closeCart" class="modal-close" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="cartItems" class="cart-items-container">
+        <!-- Injected by JS -->
+      </div>
+      <div class="cart-summary" id="cartSummary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₹0</span>
+        </div>
+        <div class="summary-row">
+          <span>Estimated Shipping</span>
+          <span class="free-tag">FREE</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Estimated Total</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+        <div class="cart-actions">
+          <button id="checkoutBtn" class="btn btn-primary btn-block"><i class="fa-solid fa-lock"></i> Proceed to Secure Checkout</button>
+          <button id="clearCartBtn" class="btn btn-ghost btn-block"><i class="fa-solid fa-trash-can"></i> Clear Bag</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign In Modal -->
+  <div id="signinModal" class="modal">
+    <div class="modal-backdrop" id="signinBackdrop"></div>
+    <div class="modal-content modal-auth">
+      <button class="modal-close" id="closeSignin" aria-label="Close Sign In"><i class="fa-solid fa-xmark"></i></button>
+      <div class="auth-header">
+        <div class="auth-icon"><i class="fa-solid fa-circle-user"></i></div>
+        <h3>Welcome Back</h3>
+        <p>Sign in to sync your wardrobe and personalized outfits</p>
+      </div>
+      <form id="signinForm" class="auth-form">
+        <div class="form-group">
+          <label for="signinEmail">Email Address</label>
+          <input type="email" id="signinEmail" placeholder="e.g. fashionista@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="signinPassword">Password</label>
+          <input type="password" id="signinPassword" placeholder="••••••••" required>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        </div>
+      </form>
+      <div class="auth-footer">
+        <p>Don't have an account yet? <a href="#" id="switchToRegister">Create one for free</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-backdrop" id="registerBackdrop"></div>
+    <div class="modal-content modal-auth">
+      <button class="modal-close" id="closeRegister" aria-label="Close Register"><i class="fa-solid fa-xmark"></i></button>
+      <div class="auth-header">
+        <div class="auth-icon"><i class="fa-solid fa-sparkles"></i></div>
+        <h3>Join Teju's Wardrobe</h3>
+        <p>Unlock smart outfit matching, private wardrobe, and VIP styles</p>
+      </div>
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label for="regName">Full Name</label>
+          <input type="text" id="regName" placeholder="e.g. Sophia Turner" required>
+        </div>
+        <div class="form-group">
+          <label for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" placeholder="e.g. sophia@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" placeholder="At least 6 characters" required minlength="6">
+        </div>
+        <div class="form-group">
+          <label for="regConfirm">Confirm Password</label>
+          <input type="password" id="regConfirm" placeholder="Repeat your password" required minlength="6">
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-gold btn-block">Create Free Account</button>
+        </div>
+      </form>
+      <div class="auth-footer">
+        <p>Already a member? <a href="#" id="switchToSignin">Sign in here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

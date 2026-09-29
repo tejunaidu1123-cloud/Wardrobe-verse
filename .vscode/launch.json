@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Run WardrobeVerse (Microsoft Edge)",
+            "file": "${workspaceFolder}/WardrobeVerse/index.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Run WardrobeVerse (Google Chrome)",
+            "file": "${workspaceFolder}/WardrobeVerse/index.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Localhost (Port 8000)",
+            "url": "http://localhost:8000",
+            "webRoot": "${workspaceFolder}/WardrobeVerse"
+        }
+    ]
+}
